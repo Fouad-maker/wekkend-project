@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+
+<div class="container spacer bg-image">
+  <div class="card card-default">
+    <strong class="card-heading card bg-primary text-white ">Creat Task</strong>
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="onOpenBet(f.value)">
+        <div class="form-group">
+          <label class="control-labem">Open Bet</label>
+          <input class="form-control" type="text" ngModel name="taskName" required placeholder="please input a positive value of seconds">
+
+        </div>
+
+        <button [disabled]="!f.valid" type="submit" class="btn btn-danger">Save</button>
+
+      </form>
+
+
+    </div>
+  </div>
+
+</div>

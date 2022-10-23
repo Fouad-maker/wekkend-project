@@ -1,31 +1,45 @@
 <app-navbar></app-navbar>
 <div class=" bg-image">
 <div class="text-center">
-  <button type="button" class="btn btn-primary btn-xl"><i class="bi bi-cast"></i>Cast Vote</button>
+  <button (click)="openPopup()" type="button" class="btn btn-primary btn-xl"><i class="bi bi-cast"></i>Check State</button>
 </div>
 <br>
 <br>
 <div class="text-center">
-  <button (click)="openPopup()" type="button" class="btn btn-info btn-xl"><i class="bi bi-envelope-paper"></i>Delegate</button>
+  <button routerLink="open-bet-form" type="button" class="btn btn-info btn-xl"><i class="bi bi-envelope-paper"></i>Open Bet</button>
 </div>
 <br>
 <br>
 <div class="text-center">
-  <button type="button" class="btn btn-dark btn-xl "><i class="bi bi-dice-6-fill"></i>Query Vote Result</button>
+  <button type="button" class="btn btn-dark btn-xl "><i class="bi bi-dice-6-fill"></i>Buy Tokens</button>
 </div>
 <br>
 <br>
 <div class="text-center">
   <button type="button" class="btn btn-warning btn-xl"><i class="bi bi-currency-exchange"></i>
-    Mint Vote Tokens</button>
+    Bet With Account</button>
 </div>
 <br>
 <br>
 <div class="text-center">
-  <button  type="button" class="btn btn-success btn-xl"><i class="bi bi-display"></i>Recent Votes</button>
+  <button  type="button" class="btn btn-success btn-xl"><i class="bi bi-display"></i>Close Bet </button>
 </div>
+  <br>
+  <br>
+  <div class="text-center">
+    <button  type="button" class="btn btn-success btn-xl"><i class="bi bi-display"></i>Check Player price</button>
+  </div>
+  <br>
+  <br>
+  <div class="text-center">
+    <button  type="button" class="btn btn-success btn-xl"><i class="bi bi-display"></i>Withdraw</button>
+  </div>
+  <br>
+  <br>
+  <div class="text-center">
+    <button  type="button" class="btn btn-success btn-xl"><i class="bi bi-display"></i>Burn Tokens</button>
+  </div>
 </div>
-
 
 <div
   class="modal"
@@ -35,18 +49,14 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title">Delegate to Voter </h4>
+        <h4 class="modal-title">Check State </h4>
       </div>
       <div class="modal-body">
         <form class="">
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control rounded-3" id="floatingInput" placeholder="Enter the voter address to">
-            <label for="floatingInput">Voter address</label>
-          </div>
-
-          <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Send</button>
-          <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+          <h2 class="modal-title">The current state is : {{ state }} </h2>
           <div class="modal-footer">
+            <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit" (click)="checkState()">Check</button>
+
             <button type="button" class="btn btn-danger"
                     (click)="closePopup()">
               Close

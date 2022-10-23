@@ -10,14 +10,23 @@ export class DashboardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
   }
+  state = "closed";
+
   displayStyle = "none";
 
   openPopup() {
     this.displayStyle = "block";
   }
+
   closePopup() {
     this.displayStyle = "none";
+  }
+
+  checkState() {
+    return this.state;
+    //call check state from SC
   }
 
 }
